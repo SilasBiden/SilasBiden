@@ -1,0 +1,110 @@
+<div class="row flexrow top">
+    <div class="flex1" style="margin-right: 5px;">
+        <!-- NAME -->
+        <div class="row flexrow">
+            <div class="flex1 center bg-header">
+                <span class="field-label">{{ localize 'COF.details.name' }}</span>
+            </div>
+            <div class="flex2 center cell">
+                <input class="field-value sans" name="name" type="text" value="{{actor.name}}" placeholder="{{ localize 'COF.details.name' }}" data-dtype="String"/>
+            </div>
+        </div>
+        <!-- /NAME -->
+        {{#if (isNotLimited @root)}}
+            <!-- NC -->
+            <div class="row flexrow">
+                <div class="flex1 center bg-header">
+                    <span class="field-label">{{ localize 'COF.attributes.nc.abbrev' }}</span>
+                </div>
+                <div class="flex2 center cell">
+                    <input class="field-value" name="data.nc.value" type="text" value="{{actor.data.nc.value}}" placeholder="{{ localize 'COF.attributes.nc.label' }}" data-dtype="Number"/>
+                </div>
+            </div>
+            <!-- /NC -->
+        {{/if}}
+        <!-- SIZE -->
+        <div class="row flexrow">
+            <div class="flex1 center bg-header">
+                <span class="field-label">{{ localize 'COF.details.size' }}</span>
+            </div>
+            <div class="flex2 center cell">
+                <select name="data.details.size" data-type="String" style="width:100%">
+                    {{#select data.details.size}}
+                        {{#each config.actorSizes as |label size|}}
+                                <option value="{{size}}">{{label}}</option>
+                        {{/each}}
+                    {{/select}}
+                </select>
+        </select>
+            </div>
+        </div>
+        <!-- /SIZE -->
+    </div>
+    <div class="flex1">
+        {{#if (isNotLimited @root)}}
+            <!-- ARCHETYPE -->
+            <div class="row flexrow">
+                <div class="flex1 center bg-header">
+                    <span class="field-label">{{ localize 'COF.ui.archetype' }}</span>
+                </div>
+                <div class="flex2 center cell">
+                    <select name="data.archetype" data-type="String" style="width:100%">
+                        {{#select data.archetype}}
+                            <option value="">{{localize "COF.None"}}</option>
+                            {{#each config.encounterArchetypes as |label archetype|}}
+                                    <option value="{{archetype}}">{{label}}</option>
+                            {{/each}}                            
+                        {{/select}}
+                    </select>
+                </div>
+            </div>
+            <!-- /ARCHETYPE -->
+            <!-- CATEGORY -->
+            <div class="row flexrow">
+                <div class="flex1 center bg-header">
+                    <span class="field-label">{{ localize 'COF.ui.category' }}</span>
+                </div>
+                <div class="flex2 center cell">
+                    <select name="data.category" data-type="String" style="width:100%">
+                        {{#select data.category}}
+                            <option value="">{{localize "COF.None"}}</option>
+                            {{#each config.encounterCategories as |label category|}}
+                                    <option value="{{category}}">{{label}}</option>
+                            {{/each}}                              
+                        {{/select}}
+                    </select>
+
+                </div>
+            </div>
+            <!-- /CATEGORY -->
+            <!-- BOSS RANK -->
+            <div class="row flexrow">
+                <div class="flex1 center bg-header">
+                    <span class="field-label">{{ localize 'COF.ui.boss' }}</span>
+                </div>
+                <div class="flex1 center cell">
+                    <select name="data.boss.rank" data-type="String" style="width:100%">
+                        {{#select data.boss.rank}}
+                            <option value="">{{localize "COF.None"}}</option>   
+                            {{#each config.encounterBossRanks as |label rank|}}
+                                    <option value="{{rank}}">{{label}}</option>
+                            {{/each}}                             
+                        {{/select}}
+                    </select>
+                </div>
+                <div class="flex1 center cell">
+                    <select name="data.boss.type" data-type="String" style="width:100%">
+                        {{#select data.boss.type}}
+                            <option value="">{{localize "COF.None"}}</option>
+                            {{#each config.encounterBossTypes as |label type|}}
+                                    <option value="{{type}}">{{label}}</option>
+                            {{/each}}  
+                        {{/select}}
+                    </select>
+
+                </div>
+            </div>
+            <!-- /BOSS RANK -->
+        {{/if}}
+    </div>
+</div>
