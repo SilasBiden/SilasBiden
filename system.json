@@ -1,0 +1,60 @@
+{
+    "name": "cof Silas",
+    "title": "Chroniques Oubliées Fantasy DEV Silas",
+    "description": "<p>Système Foundry VTT pour <a href='https://www.black-book-editions.fr/catalogue.php?id=477'>Chroniques Oubliées Fantasy</a>.</p><p> *** Rejoignez la communauté Discord FR :<a href='https://discord.gg/pPSDNJk'>https://discord.gg/pPSDNJk</a></p>",
+    "version": "9.255.2",
+    "minimumCoreVersion": "9",
+    "compatibleCoreVersion": "9.255",
+    "templateVersion": 2,
+    "authors": [
+        {
+            "name": "Zigmund"
+        },
+        {
+            "name": "Kristov"
+        },
+        {
+            "name": "Eryan"
+        },
+        {
+            "name": "Lemeran81"
+        }
+    ],
+    "esmodules": [
+        "module/cof.js"
+    ],
+    "styles": [
+        "./css/cof.css"
+    ],
+    "packs": [
+        {
+            "name": "macros",
+            "label": "Macros",
+            "system": "cof",
+            "path": "./packs/macros.db",
+            "type": "Macro",
+            "tag": "macro"
+        }
+    ],
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "lang/en.json"
+        },
+        {
+            "lang": "fr",
+            "name": "Français",
+            "path": "lang/fr.json"
+        }
+    ],
+    "socket": true,
+    "gridDistance": 1.5,
+    "gridUnits": "m",
+    "primaryTokenAttribute": "attributes.hp",
+    "secondaryTokenAttribute": null,
+    "url": "https://silas.club-jdr.fr/dev/cof",
+    "manifest": "https://silas.club-jdr.fr/dev/cof/system.json",
+    "download": "https://silas.club-jdr.fr/dev/system.zip",
+    "license": "licence.txt"
+}
